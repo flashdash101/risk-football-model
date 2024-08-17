@@ -41,13 +41,13 @@ class Club {
 //http://127.0.0.1:8000/api/clubs
 //https://football-risk-assessment-mkj3ly2lna-uc.a.run.app/api/clubs
 const fetchClubs = async () => {
-  const response = await axios.get('https://football-risk-assessment-mkj3ly2lna-uc.a.run.app/api/clubs');
+  const response = await axios.get('https://football-risk-assessment3-mkj3ly2lna-uc.a.run.app/api/clubs');
   return response.data;
 };
 //http://127.0.0.1:8000/api/risk
 //https://football-risk-assessment-mkj3ly2lna-uc.a.run.app/api/risk
 const fetchRiskData = async (clubNames) => {
-  const response = await axios.post('https://football-risk-assessment-mkj3ly2lna-uc.a.run.app/api/risk', { club_names: clubNames });
+  const response = await axios.post('https://football-risk-assessment3-mkj3ly2lna-uc.a.run.app/api/risk', { club_names: clubNames });
   return response.data.clubs;
 };
 
