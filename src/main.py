@@ -7,14 +7,19 @@ from Suggestions import StrategySuggester
 app = FastAPI()
 data_handler = DataHandler()
 
+
+ALLOWED_ORIGINS = [
+    "https://flashdash101.github.io",
+    "http://localhost:5173",
+    "http://localhost:5173/risk-football-model/"
+]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Adjust this to your React app's URL
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 # Pass the entire dataset to StrategySuggester for fitting the scaler
 strategy_suggester = StrategySuggester(data_handler.model, data_handler.player_data)
 
